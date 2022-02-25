@@ -1,0 +1,97 @@
+# Note: It is important not to change a pouch files name after players have a pouch as it will become un-openable!
+#####################################################################################
+#####################################################################################
+####    ______                           _        _____                 _        ####
+####   |  ____|                         | |      |  __ \               | |       ####
+####   | |__  __  ____ _ _ __ ___  _ __ | | ___  | |__) |__  _   _  ___| |__     ####
+####   |  __| \ \/ / _` | '_ ` _ \| '_ \| |/ _ \ |  ___/ _ \| | | |/ __| '_ \    ####
+####   | |____ >  < (_| | | | | | | |_) | |  __/ | |  | (_) | |_| | (__| | | |   ####
+####   |______/_/\_\__,_|_| |_| |_| .__/|_|\___| |_|   \___/ \__,_|\___|_| |_|   ####
+####                              | |                                            ####
+####                              |_|                                            ####
+#####################################################################################
+#####################################################################################
+# Below is an example pouch, you can use this file as reference for all future pouches you create
+# upon updates this file may be wiped and updated with the latest features
+# To create a new pouch just copy and paste this file and rename it with your pouch name
+# or create a file with the name of your pouch followed by the ".yml" file extension
+#*
+#* For a slightly more in depth documentation visit our docs website: todo link
+#*
+
+# The name of the pouch, this is required for all created pouches
+Name: "&6&lLUCKY &fPouch"
+Pouch:
+  Item: "CHEST"
+  Enchanted: true
+  Lore:
+    - "&7Test your luck with the LUCKY Pouch"
+    - "&7Prizes Given: 1"
+    - "&7Prize List:"
+    - "&7.- &a10x Golden Ingots [COMMON]"
+    - "&7- &b5x Diamonds [UNCOMMON]"
+    - "&7- &61x Enchanted Golden Apple [RARE]"
+
+# The permission node required to redeem pouch, don't add this field if you want everyone to be able to use it
+Permission: "pouches.pouch.example"
+
+# The minecraft sound ID and data to be played upon pouch redeem, don't add this section if you don't need it
+Sound:
+  SoundID: "entity.player.levelup"
+  Volume: 1
+  Pitch: 1
+
+# The particle  data to be spawned on the player upon pouch redeem, don't add this section if you don't need it
+Particles:
+  ParticleID: "enchant"
+  Intensity: 1
+  Spread: 5
+
+# The number of prizes that will be given upon opening the pouch
+PrizesPerOpen: 1
+
+# The list of items within the pouch, currently a pouch supports up to 28 items, any extra items are ignored
+# Name: The prize name
+# Icon.Item: The minecraft item id of the preview icon
+# Icon.Amount: The amount of items to show in the preview, obviously cant be above 64!
+# Weight: The weighted chance of getting the item, higher weight = higher chance (Doesn't have to add up to 100)
+# Commands: The list of commands to be executed if the player wins that prize
+# GUILore: The lore for the item when previewed in the gui
+Prizes:
+  1:
+    Name: "&f10x &6Golden &fIngots"
+    Icon:
+      Item: GOLD_INGOT
+      Amount: 10
+    Weight: 50
+    Commands:
+      - "minecraft:give <playerName> minecraft:gold_ingot 10"
+    GUILore:
+      - "&710x Gold Ingots,"
+      - "&7For all your gold needs!"
+      - "&7Win Chance: &f<chance>%"
+  2:
+    Name: "&f5x &bDiamonds &f+ 100xp"
+      Icon:
+        Item: DIAMOND
+        Amount: 5
+      Weight: 20
+      Commands:
+        - "minecraft:give <playerName> minecraft:diamond 5"
+        - "minecraft:xp add <playerName> 100"
+      GUILore:
+        - "&75x Diamonds, 100xp,"
+        - "&7Very Cool"
+        - "&7Win Chance: &f<chance>%"
+  3:
+    Name: "&l1X &6&lEnchanted Golden Apple"
+    Icon:
+      Item: ENCHANTED_GOLDEN_APPLE
+      Amount: 1
+      Weight: 5
+      Commands:
+        - "minecraft:give <playerName> minecraft:enchanted_golden_apple 1"
+      GUILore:
+        - "&71x Enchanted Golden Apple,"
+        - "&7Yum"
+        - "&7Win Chance: &f<chance>%"

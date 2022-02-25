@@ -1,0 +1,4 @@
+name: Pouch+
+version: ${project.version}
+main: uhfinn.pouchplus.Main
+api-version: 1.18
